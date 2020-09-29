@@ -22,3 +22,18 @@ a primary proj to test socket coding in Linux
 - 返回**捕获连接**这一步。
 
 ### 具体实现可看代码，Tcp客户端为client.c，Tcp服务端为Server.c
+
+最终效果如下：
+
+dzw@ubuntu:~/SocketTestProj$ ./server.out 
+
+wait for socket from any client...
+Get one message from client:
+port    : 24236
+IP Addr : 192.168.184.128
+message : hello, server
+Get one message from client:
+port    : 24748
+IP Addr : 192.168.184.128
+message : hello, server
+...
