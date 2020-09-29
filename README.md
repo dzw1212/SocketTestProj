@@ -25,15 +25,15 @@ a primary proj to test socket coding in Linux
 
 最终效果如下：
 
-dzw@ubuntu:~/SocketTestProj$ ./server.out 
+dzw@ubuntu:~/SocketTestProj$ ./server.out  
 
-wait for socket from any client...
-Get one message from client:
-port    : 24236
-IP Addr : 192.168.184.128
-message : hello, server
-Get one message from client:
-port    : 24748
-IP Addr : 192.168.184.128
-message : hello, server
-...
+wait for socket from any client...  
+Get one message from client:  
+port    : 24236  
+IP Addr : 192.168.184.128  
+message : hello, server  
+Get one message from client:  
+port    : 24748  
+IP Addr : 192.168.184.128  
+message : hello, server  
+...  
