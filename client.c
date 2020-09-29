@@ -16,19 +16,20 @@
 
 int main()
 {
-	int iSendSock = 0;
-	int iRet = ERROR_SUCCESS;
-	char acBuff[BUFFSIZE] = "hello, server";
-	struct sockaddr_in stSendAddr;
-
-	(void)memset(&stSendAddr, 0, sizeof(stSendAddr));
-	/* create a socket to send msg */
-	iSendSock = socket(AF_INET, SOCK_STREAM, 0);
-	if(iSendSock < 0){
-		printf("create iSendSock failed! errorCode is %d.\n", iSendSock);
-		return ERROR_FAILED;
-	}
-	/* indicate dest IP Address and Port */
+    int iSendSock = 0;
+    int iRet = ERROR_SUCCESS;
+    char acBuff[BUFFSIZE] = "hello, server";
+    struct sockaddr_in stSendAddr;
+	
+    (void)memset(&stSendAddr, 0, sizeof(stSendAddr));
+    /* create a socket to send msg */
+    iSendSock = socket(AF_INET, SOCK_STREAM, 0);
+    if (iSendSock < 0)
+    {
+        printf("create iSendSock failed! errorCode is %d.\n", iSendSock);
+        return ERROR_FAILED;
+    }
+    /* indicate dest IP Address and Port */
     stSendAddr.sin_family = AF_INET;
     stSendAddr.sin_port = htons(55555);
     (void)inet_pton(AF_INET, "192.168.184.128", &stSendAddr.sin_addr);
@@ -40,12 +41,12 @@ int main()
     	return ERROR_FAILED;
     }
     /* send message */
-	iRet = send(iSendSock, acBuff, sizeof(acBuff), 0);
-	if (iRet < 0)
-	{
-		printf("send msg to server failed! errorCode is %d.\n", iRet);
-    	return ERROR_FAILED;
-	}
+    iRet = send(iSendSock, acBuff, sizeof(acBuff), 0);
+    if (iRet < 0)
+    {
+        printf("send msg to server failed! errorCode is %d.\n", iRet);
+        return ERROR_FAILED;
+    }
 
     (void)close(iSendSock);
 	return 0;
